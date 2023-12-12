@@ -1,0 +1,30 @@
+{
+  "name": "mern-biolerplate",
+  "version": "1.0.0",
+  "description": "MERN biolerplate Project",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run dev --prefix frontend",
+    "server": "npm run dev --prefix backend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "lint:backend": "npm run lint --prefix backend",
+    "lint:frontend": "npm run lint --prefix frontend",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "precommit": "npm run lint",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "ABDELLAH DAMRI",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "pretty-quick": "^3.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "nom run precommit"
+    }
+  }
+}
